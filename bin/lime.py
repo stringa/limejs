@@ -90,6 +90,12 @@ def checkDependencies():
         if(retcode!=0):
             print ('Failed to clone Closure Library via Git. Discontinuing.')
             sys.exit(1)
+        
+        retcode = subprocess.Popen(subprocess.list2cmdline(["git","checkout","161037749f1efee3142630bba5092709cb09f796"]),shell=True,cwd=closure_dir).wait()
+        
+        if(retcode!=0):
+            print ('Failed to clone Closure Library via Git. Discontinuing.')
+            sys.exit(1)
     
     
     #Box2D
